@@ -4,7 +4,7 @@ namespace Homework1
 {
     public static class Calculator
     {
-        public enum ValidOperations
+        public enum Operation
         {
             Plus = '+',
             Minus = '-',
@@ -12,14 +12,14 @@ namespace Homework1
             Division = '/'
         }
 
-        public static int Calculate(int val1, ValidOperations operation, int val2)
+        public static int Calculate(int val1, Operation operation, int val2)
         {
             var result = operation switch
             {
-                ValidOperations.Plus => val1 + val2,
-                ValidOperations.Minus => val1 - val2,
-                ValidOperations.Multiplication => val1 * val2,
-                ValidOperations.Division => val1 / val2,
+                Operation.Plus => val1 + val2,
+                Operation.Minus => val1 - val2,
+                Operation.Multiplication => val1 * val2,
+                Operation.Division => val1 / val2,
                 _ => throw new ArgumentOutOfRangeException(nameof(operation), operation, null)
             };
             return result;
