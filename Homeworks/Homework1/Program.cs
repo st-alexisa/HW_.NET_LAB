@@ -4,7 +4,7 @@ namespace Homework1
 {
     internal static class Program
     {
-        static int Main(string[] args)
+        public static int Main(string[] args)
         {
             var isCorrectFormat = Parser.TryParseTwoArguments(args, 
                 out var val1, out var operation, out var val2);

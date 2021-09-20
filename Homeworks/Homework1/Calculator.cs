@@ -14,15 +14,14 @@ namespace Homework1
 
         public static int Calculate(int val1, Operation operation, int val2)
         {
-            var result = operation switch
-            {
-                Operation.Plus => val1 + val2,
-                Operation.Minus => val1 - val2,
-                Operation.Multiplication => val1 * val2,
-                Operation.Division => val1 / val2,
-                _ => throw new ArgumentOutOfRangeException(nameof(operation), operation, null)
-            };
-            return result;
+            if (operation == Operation.Plus)
+                return val1 + val2;
+            else if (operation == Operation.Minus)
+                return val1 - val2;
+            else if (operation == Operation.Division)
+                return val1 / val2;
+            else 
+                return val1 * val2;
         }
     }
 }
